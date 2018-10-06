@@ -9,7 +9,7 @@ vigilante.addRouteHandlers([
   {
     method: 'GET',
     path: '/foo',
-    handler: (req, res) => {
+    handle: (req, res) => {
       res.write('<h1>Hello, world!</h1>')
     }
   }
