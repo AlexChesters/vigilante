@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node example/server.js",
+    "watch": "nodemon example/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -16,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/AlexChesters/vigilant/issues"
   },
-  "homepage": "https://github.com/AlexChesters/vigilant#readme"
+  "homepage": "https://github.com/AlexChesters/vigilant#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
 }
