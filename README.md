@@ -22,7 +22,7 @@ vigilante.start(
 ```
 
 # API
-## `vilgante`
+## `vigilante`
 `require('vigilante')` exports an object with the following properties exposed
 
 #### `addRouteHandlers`
