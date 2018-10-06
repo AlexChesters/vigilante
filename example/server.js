@@ -1,10 +1,5 @@
 const vigilante = require('../index')()
 
-vigilante.start(
-  8080,
-  () => { console.log('vigilante example server is running') }
-)
-
 vigilante.addRouteHandlers([
   {
     method: 'GET',
@@ -14,3 +9,8 @@ vigilante.addRouteHandlers([
     }
   }
 ])
+
+vigilante.start(
+  8080,
+  () => { console.log('vigilante example server is running') }
+)
