@@ -1,0 +1,20 @@
+{
+  "name": "vigilant",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node example/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexChesters/vigilant.git"
+  },
+  "author": "Alex Chesters",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexChesters/vigilant/issues"
+  },
+  "homepage": "https://github.com/AlexChesters/vigilant#readme"
+}

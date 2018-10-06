@@ -1,0 +1,1 @@
+const vigilante = require('../index')()
