@@ -1,5 +1,5 @@
 {
-  "name": "vigilant",
+  "name": "vigilante",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlexChesters/vigilant.git"
+    "url": "git+https://github.com/AlexChesters/vigilante.git"
   },
   "author": "Alex Chesters",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AlexChesters/vigilant/issues"
+    "url": "https://github.com/AlexChesters/vigilante/issues"
   },
-  "homepage": "https://github.com/AlexChesters/vigilant#readme",
+  "homepage": "https://github.com/AlexChesters/vigilante#readme",
   "devDependencies": {}
 }

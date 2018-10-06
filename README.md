@@ -1,4 +1,4 @@
-# vigilant
+# vigilante
 A minimalist web server for Node.js
 
 # Usage
