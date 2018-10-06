@@ -6,7 +6,7 @@ vigilante.addRouteHandlers([
     method: 'GET',
     path: '/',
     handle: (_, res) => {
-      res.write('<h1>Hello, world!</h1>')
+      res.sendPlainText('Hello, world!')
     }
   },
   {
@@ -16,7 +16,7 @@ vigilante.addRouteHandlers([
       const response = await fetch('https://www.reddit.com/hot.json')
       const data = await response.json()
       const foo = data.data.children.slice(0, 2)
-      res.write(JSON.stringify(foo))
+      res.sendJSON(foo)
     }
   }
 ])
