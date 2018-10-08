@@ -5,7 +5,7 @@ A minimalist web server for Node.js
 ```javascript
 const vigilante = require('vigilante')
 
-vigilante.addRouteHandlers([
+const routeHandlers = [
   {
     method: 'GET',
     path: '/',
@@ -13,9 +13,11 @@ vigilante.addRouteHandlers([
       res.sendPlainText('Hello, world!')
     }
   }
-])
+]
 
-vigilante.start(
+const server = vigilante(routeHandlers)
+
+server.start(
   8080,
   () => { console.log('my server is running') }
 )
@@ -23,10 +25,14 @@ vigilante.start(
 
 # API
 ## `vigilante`
-`require('vigilante')` exports an object with the following properties exposed
+`require('vigilante')` exports a function which returns an object
 
-#### `addRouteHandlers`
-`addRouteHandlers(handlers: <Array[RouteHandler]>)`
+#### Constructor
+`const vigilante = require('vigilante')`
+
+`const server = vigilante(routeHandlers)`
+
+`routeHandlers` must be an array of `RouteHandler`s.
 
 `RouteHandler` is an object that must satisfy the following schema:
 ```javascript
