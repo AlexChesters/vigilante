@@ -27,7 +27,7 @@ module.exports = [
     method: 'GET',
     path: '/debug',
     middlewares: [
-      async (req) => {
+      (req) => {
         const data = { headers: req.headers }
         req.locals.data = data
       }
