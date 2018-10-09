@@ -2,14 +2,12 @@ const fetch = require('node-fetch')
 
 module.exports = [
   {
-    method: 'GET',
     path: '/',
     handle: (req, res) => {
       res.sendPlainText('Hello, world!')
     }
   },
   {
-    method: 'GET',
     path: '/reddit',
     middlewares: [
       async (req) => {
@@ -24,7 +22,6 @@ module.exports = [
     }
   },
   {
-    method: 'GET',
     path: '/debug',
     middlewares: [
       (req) => {
