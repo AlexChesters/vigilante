@@ -40,7 +40,7 @@ server.start(
   method: String,           // a valid HTTP method (e.g. GET, POST)
   path: String,             // the path to match against for this route handler - must
                             // begin with a leading slash,
-  middlewares: [Middleware] // an array of Middleware functions
+  middlewares: [Middleware] // an array of Middleware functions (Optional.)
   handle: RequestHandler    // the function handler for this route 
 }
 ```
