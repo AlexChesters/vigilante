@@ -1,7 +1,7 @@
 {
   "name": "vigilante",
   "version": "0.0.0",
-  "description": "",
+  "description": "A minimalist web server for Node.js",
   "main": "index.js",
   "scripts": {
     "test": "concurrently \"eslint lib\" \"jest\" ",
