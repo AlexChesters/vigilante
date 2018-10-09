@@ -9,8 +9,11 @@ const routeHandlers = [
   {
     method: 'GET',
     path: '/',
-    handle: (_, res) => {
-      res.sendPlainText('Hello, world!')
+    middleware: [
+      (req) => req.locals.message = 'Hello, world!'
+    ]
+    handle: (req, res) => {
+      res.sendPlainText(req.locals.message)
     }
   }
 ]
