@@ -24,7 +24,6 @@ module.exports = [
     }
   },
   {
-
     method: 'GET',
     path: '/debug',
     middlewares: [
