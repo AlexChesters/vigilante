@@ -16,11 +16,11 @@ module.exports = [
         const response = await fetch('https://www.reddit.com/hot.json')
         const data = await response.json()
         const firstThreeItems = data.data.children.slice(0, 2)
-        req.data = firstThreeItems
+        req.setLocal('data', firstThreeItems)
       }
     ],
     handle: async (req, res) => {
-      res.sendJSON(req.data)
+      res.sendJSON(req.getLocal('data'))
     }
   }
 ]
