@@ -4,18 +4,23 @@ module.exports = [
   {
     method: 'GET',
     path: '/',
-    handle: (_, res) => {
+    handle: (req, res) => {
       res.sendPlainText('Hello, world!')
     }
   },
   {
     method: 'GET',
-    path: '/foo',
-    handle: async (_, res) => {
-      const response = await fetch('https://www.reddit.com/hot.json')
-      const data = await response.json()
-      const foo = data.data.children.slice(0, 2)
-      res.sendJSON(foo)
+    path: '/reddit',
+    middlewares: [
+      async (req) => {
+        const response = await fetch('https://www.reddit.com/hot.json')
+        const data = await response.json()
+        const firstThreeItems = data.data.children.slice(0, 2)
+        req.data = firstThreeItems
+      }
+    ],
+    handle: async (req, res) => {
+      res.sendJSON(req.data)
     }
   }
 ]
