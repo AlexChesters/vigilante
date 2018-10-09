@@ -37,16 +37,28 @@ server.start(
 `RouteHandler` is an object that must satisfy the following schema:
 ```javascript
 {
-  method: String,         // a valid HTTP method (e.g. GET, POST)
-  path: String,           // the path to match against for this route handler - must
-                          // begin with a leading slash
-  handle: RequestHandler  // the function handler for this route 
+  method: String,           // a valid HTTP method (e.g. GET, POST)
+  path: String,             // the path to match against for this route handler - must
+                            // begin with a leading slash,
+  middlewares: [Middleware] // an array of Middleware functions
+  handle: RequestHandler    // the function handler for this route 
+}
+```
+
+`Middleware` is an array of functions that will be run before your `handle`
+function. Each `Middleware` function will be given one parameter, `request` - an
+object with the following properties exposed:
+```javascript
+{
+  locals: Object, // key/value pairs that you can read and write too (e.g. for
+                  // setting a value which you can use in the request handler)
+  headers: Object // read-only copy of the request headers. Any attempt to
+                  // modify the headers will fail silently
 }
 ```
 
 `RequestHandler` is a function that will be given two parameters, `request` and
-`response`. The `request` parameter is a
-[`http.IncomingMessage`](https://nodejs.org/api/http.html#http_class_http_incomingmessage).
+`response`. The `request` parameter is described above.
 The `response` parameter is an object with the following properties exposed:
 ```javascript
 {
